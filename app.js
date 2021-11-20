@@ -55,24 +55,32 @@ function connect() {
     out_device = selected_device;
 }
 
+function send(message, number, value) {
+    if (out_device == null) {
+        document.getElementById('message').innerText = 'MIDIデバイスが接続されていません';
+        return;
+    }
+    out_device.send([message, number, value]);
+}
+
 // Control Changeボタンのイベント処理
 Array.from(document.getElementsByClassName('cc')).forEach(button => {
     button.addEventListener('mousedown', () => {
-        out_device.send([0xB0, button.value, 0x7f]);
+        send(0xB0, button.value, 0x7f);
     });
 
     button.addEventListener('mouseup', () => {
-        out_device.send([0xB0, button.value, 0x00]);
+        send(0xB0, button.value, 0x00);
     });
 });
 
 // Noteボタンのイベント処理
 Array.from(document.querySelectorAll('.note, .circle_note')).forEach(button => {
     button.addEventListener('mousedown', () => {
-        out_device.send([0x90, button.value, 0x7f]);
+        send(0x90, button.value, 0x7f);
     });
 
     button.addEventListener('mouseup', () => {
-        out_device.send([0x90, button.value, 0x00]);
+        send(0x90, button.value, 0x00);
     });
 });

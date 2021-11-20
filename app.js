@@ -20,21 +20,11 @@ function failure(msg) {
 }
 
 
-//MIDIデバイスへアクセスする
+//MIDIデバイスへアクセス
 navigator.requestMIDIAccess().then(success, failure);
 
 
-function onNote(ch) {
-    console.log('OK ' + ch);
-    // output_device.send([0x90, ch, 0x7f]);
-}
-
-function onControlChange(ch) {
-    console.log('OK ' + ch);
-    // output_device.send([0xB0, ch, 0x7f]);
-}
-
-Array.from(document.getElementsByClassName("cc")).forEach(button => {
+Array.from(document.getElementsByClassName('cc')).forEach(button => {
     button.addEventListener('mousedown', () => {
         output_device.send([0xB0, button.value, 0x7f]);
     });

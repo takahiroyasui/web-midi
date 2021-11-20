@@ -1,0 +1,23 @@
+.container {
+    display: inline-grid;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    background-color: #202020;
+    padding: 12px;
+    border-radius: 16px;
+}
+
+.cc, .circle_note {
+    border-radius: 100%;
+    margin: 14px;
+    font-size: 24px
+}
+
+.cc:hover, .circle_note:hover {
+    background-color: #e2e2e2;
+}
+
+.note {
+    margin: 4px;
+    font-size: 24px
+}

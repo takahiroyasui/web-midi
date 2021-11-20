@@ -1,5 +1,4 @@
 var midi;
-
 var out_device;
 var select_box;
 var device_list;
@@ -8,7 +7,6 @@ var is_connected = false;
 //通信成功時
 function success(midiAccess) {
     // OUTPUT: PC -> Device
-
     select_box = document.getElementById('output_device_list');
 
     console.log("=== OUTPUT Devices ===");
@@ -20,9 +18,6 @@ function success(midiAccess) {
     }
 
     device_list = Array.from(midiAccess.outputs).map((output) => output[1]);
-
-    // output_device = Array.from(midiAccess.outputs).map((output) => output[1])[2];
-    // console.log("out : " + output_device.name);
 }
 
 //通信失敗時
@@ -58,6 +53,7 @@ function connect() {
     out_device = selected_device;
 }
 
+// Control Changeボタンのイベント処理
 Array.from(document.getElementsByClassName('cc')).forEach(button => {
     button.addEventListener('mousedown', () => {
         out_device.send([0xB0, button.value, 0x7f]);
@@ -68,7 +64,7 @@ Array.from(document.getElementsByClassName('cc')).forEach(button => {
     });
 });
 
-
+// Noteボタンのイベント処理
 Array.from(document.querySelectorAll('.note, .circle_note')).forEach(button => {
     button.addEventListener('mousedown', () => {
         out_device.send([0x90, button.value, 0x7f]);

@@ -34,6 +34,7 @@ function connect() {
     if (is_connected) {
         is_connected = false;
         document.getElementById('connect_button').innerText = '接続';
+        document.getElementById('message').innerText = 'MIDIデバイスを選択してください';
         select_box.removeAttribute("disabled");
         out_device = null;
         return;
@@ -48,6 +49,7 @@ function connect() {
 
     is_connected = true;
     document.getElementById('connect_button').innerText = '切断';
+    document.getElementById('message').innerText = '';
     select_box.setAttribute("disabled", "disabled");
     console.log(selected_device.name);
     out_device = selected_device;

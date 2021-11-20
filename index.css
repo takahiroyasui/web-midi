@@ -21,3 +21,11 @@
     margin: 4px;
     font-size: 24px
 }
+
+#output_device_list {
+    padding-inline-end: 14px;
+}
+
+#message {
+    padding-inline-start: 10px;
+}

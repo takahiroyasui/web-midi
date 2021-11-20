@@ -5,15 +5,14 @@
   </head>
   <body>
     <p>Virtual LauchPad Mini</p>
-    
-    <select name="example">
-      <option value="サンプル1">サンプル1</option>
-      <option value="サンプル2">サンプル2</option>
-      <option value="サンプル3">サンプル3</option>
-    </select>
-    
+
+    <select id="output_device_list"></select>
+
+    <button id="connect_button" type="button" value="104" onclick="connect()">接続</button>
+    <span id="message">MIDIデバイスを選択してください</span>
     <br>
     <br>
+
     <div class="container">
       <button class="cc" type="button" value="104">1</button>
       <button class="cc" type="button" value="105">2</button>

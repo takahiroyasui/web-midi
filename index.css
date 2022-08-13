@@ -17,6 +17,10 @@
     background-color: #e2e2e2;
 }
 
+.cc:active, .circle_note:active {
+    background-color: #f4f4f4;
+}
+
 .note {
     margin: 4px;
     font-size: 24px

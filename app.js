@@ -60,7 +60,10 @@ function send(message, number, value) {
         document.getElementById('message').innerText = 'MIDIデバイスが接続されていません';
         return;
     }
-    out_device.send([message, number, value]);
+
+    const data = number.split(':');
+    message += parseInt(data[0]);
+    out_device.send([message, data[1], value]);
 }
 
 // Control Changeボタンのイベント処理

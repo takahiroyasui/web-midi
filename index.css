@@ -1,10 +1,25 @@
 .container {
+    display: table-caption;
+}
+
+.launchpadmini {
     display: inline-grid;
     grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
     grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
     background-color: #202020;
     padding: 12px;
     border-radius: 16px;
+}
+
+.streamdeck {
+    display: inline-grid;
+    grid-template-rows: 80px 80px 80px 80px;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px;
+    grid-gap: 4px;
+    background-color: #202020;
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 16px;
 }
 
 .cc, .circle_note {
